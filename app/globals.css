@@ -1,11 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --header-height: 60px;
+
+  --main-color: #e44156;
+  --black-textclr: #1f2937;
+  --black-lightclr: #535c6a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,12 +19,332 @@
   }
 }
 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #fff;
+  color: var(--black-textclr);
+  font-family: 'Poppins', sans-serif;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+p,span,h1,h2,h3,h4,h5,h6{
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.container{
+  margin: 0 230px;
+}
+
+header {
+  height: var(--header-height);
+  background: #fff;
+}
+header nav{
+  height: 100%;
+  margin: 0 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav_logo{
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+header .nav_logo p{
+  font-size: 20px;
+  color: var(--main-color);
+  font-weight: 700;
+}
+header .nav_links{
+  display: flex;
+  gap: 20px;
+}
+header .nav_link{
+  color: var(--black-lightclr);
+  font-size: 14px;
+}
+header .nav_btn{
+  background: var(--main-color);
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+
+.homepage{
+  margin-top: 100px;
+}
+.homepage_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.homepage h1{
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  text-align-last: center;
+}
+.homepage p{
+  font-size: 16px;
+  color: var(--black-lightclr);
+  text-align: center;
+  text-align-last: center;
+  margin: 0 250px;
+}
+.homepage .homepage_gnrt-btn{
+  background: var(--main-color);
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+.homepage .homepage_img {
+  display: flex;
+  gap: 15px;
+  margin-top: 80px;
+}
+.homepage .homepage_img img {
+  width: 350px;
+  border-radius: 15px;
+}
+
+.homepage .homepage_git {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+  margin-bottom: 50px;
+}
+.homepage .homepage_git h3 {
+  font-size: 25px;
+  font-weight: 600;
+  text-align-last: center;
+}
+.homepage .homepage_git p {
+  font-size: 14px;
+  color: var(--black-lightclr);
+}
+.homepage .homepage_git a {
+  background: var(--black-textclr);
+  font-size: 14px;
+  padding: 5px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 7px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid #e441562b;
+}
+footer p{
+  font-size: 16px;
+  color: var(--black-lightclr);
+}
+footer a{
+  font-size: 16px;
+  color: var(--black-textclr);
+}
+
+.form{
+  margin-top: 100px;
+}
+.form .form_heading{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form .form_heading h3{
+  font-size: 20px;
+  font-weight: 700;
+}
+.form .form_heading p{
+  font-size: 14px;
+  color: var(--black-lightclr);
+}
+.form .form_meal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.form .form_input-div {
+  margin-top: 60px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 30px;
+  column-gap: 20px;
+}
+.form .form_item{
+  display: flex;
+  width: 100%;
+  gap: 5px;
+  flex-direction: column;
+}
+.form input, select{
+  font-size: 14px;
+  margin: 10px 0 10px 0px;
+  border: 1px solid rgb(178, 178, 178);
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: var(--black-lightclr);
+  outline: none;
+  width: 100%;
+}
+.form label{
+  display: flex;
+  gap: 5px;
+  font-size: 16px;
+  color: var(--black-lightclr);
+}
+.form label span{
+  font-size: 12px;
+  color: var(--main-color);
+  display: flex;
+  align-items: end;
+}
+.form  .form_btn .form_link{
+  background: var(--main-color);
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff; 
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.form .form_item:nth-child(1),
+.form .form_item:nth-child(2),
+.form .form_item:nth-child(3) {
+  grid-row: 1; 
+}
+.form .form_item:nth-child(4),
+.form .form_item:nth-child(6),
+.form .form_item:nth-child(7) {
+  grid-row: 2; 
+}
+.form .form_item:nth-child(5),
+.form .form_item:nth-child(8) {
+  grid-row: 3; 
+}
+.form .form_btn:nth-child(9){
+  grid-row: 4; 
+  place-items: center;
+}
+
+
+.meal{
+  margin-top: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.meal .meal_heading{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.meal .meal_heading h3{
+  font-size: 20px;
+  font-weight: 700;
+}
+.meal .meal_heading p{
+  font-size: 14px;
+  color: var(--black-lightclr);
+}
+.meal .meal_plan{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.meal .meal_card{
+  display: grid;
+  gap: 20px;
+  place-items: center;
+}
+.meal_plan .meal_card:nth-child(odd){
+  grid-template-columns: auto repeat(5, 1fr);
+}
+.meal_plan .meal_card:nth-child(even){
+  grid-template-columns: repeat(5, 1fr) auto;
+}
+.meal_plan .meal_card:nth-child(odd) > div:first-child {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+.meal_plan .meal_card:nth-child(odd) > div:first-child p{
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  color: var(--main-color);
+  font-size: 14px;
+  text-shadow: 2px 2px 4px currentColor;
+  padding-right: 10px;
+  font-weight: 700;
+}
+.meal_plan .meal_card:nth-child(even) > div:last-child {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.meal_plan .meal_card:nth-child(even) > div:last-child p{
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  color: var(--main-color);
+  font-size: 14px;
+  text-shadow: 2px 2px 4px currentColor;
+  padding-left: 10px;
+  font-weight: 700;
+}
+.meal_card-item{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #e4415717;
+  border: 1px solid #e4415738;
+  border-radius: 10px;
+}
+.meal .meal_card-item img{
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.meal .meal_card-item h3{
+  font-size: 17px;
+  font-weight: 600;
+  padding: 0 10px;
+}
+.meal .meal_card-item a{
+  font-size: 12px;
+  padding: 0 10px;
+  margin-bottom: 10px;
 }
